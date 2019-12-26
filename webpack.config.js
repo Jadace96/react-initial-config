@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   // ENTRY POINT
@@ -15,12 +16,34 @@ module.exports = {
 
   // PATH RESOLVE
   resolve: {
+    extensions: [".js", ".json", ".jsx"],
     modules: [path.resolve(__dirname, "src"), "node_modules"]
   },
 
+  // LOADERS
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      }
+    ]
+  },
+
+  // PLUGINS
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: path.resolve(__dirname, "public/index.html"),
+      filename: "index.html"
+    })
+  ],
+
   // DEV SERVER ENTRY POINT
   devServer: {
-    port: 3000,
+    port: 3002,
     open: true,
     contentBase: path.resolve(__dirname, "src")
   }
