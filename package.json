@@ -2,11 +2,18 @@
   "name": "react-config",
   "version": "0.0.1",
   "description": "Initial react app configuration from cero with webpack and babel",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  }
 }
