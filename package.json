@@ -1,0 +1,12 @@
+{
+  "name": "react-config",
+  "version": "0.0.1",
+  "description": "Initial react app configuration from cero with webpack and babel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
